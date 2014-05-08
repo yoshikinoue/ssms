@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>サーバ管理-ssms-</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="{{ STATIC_URL }}img/sava_icon.png">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" media="screen">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" media="screen">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" media="screen">
+
+	</head>
+	<body style="padding-top:30px">
+		<div class="container-fluid">
+			<!-- top navbar -->
+			<div class="navbar navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container-fluid">
+					<a href="" class="brand">サバ缶台帳</a>
+					<!-- <a href="" class="brand"><img src="{{ STATIC_URL }}img/sava_logo.png"></a> -->
+						<ul class="nav">
+							<li class="active"><a href="/servers/">Home</a></li>
+							<li><a href="/help/">Help</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row-fluid">
+				<!--Sidebar content-->
+				<div class="span2" style="padding-top:40px">
+					<div class="well sidebar-nav">
+						<ul class="nav nav-list">
+							<li>
+								<a href="/servers/id_number/">ID順</a>
+							</li>
+							<li>
+								<a href="/servers/domain_name/">ドメイン順</a>
+							</li>
+							<li>
+								<a href="/servers/company_name/">会社順</a>
+							</li>
+							<li>
+								<a href="/servers/sainet_charge/">担当者順</a>
+							</li>
+							<li>
+								<a href="/servers/search/">検索</a>
+							</li>
+							<li class="nav-header">編集</li>
+							<li>
+								<a href="/servers/new/">新規追加</a>
+							</li>
+<!-- 							<li>
+								<a href="/servers/new_sainet_charge/">担当者追加</a>
+							</li> -->
+							<li>
+								<a href="/servers/new_registrar/">レジストラ追加</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!--Body content-->
+				<div class="span10" style="background:lightgray;padding-top:20px">
+						{% block content %}
+						{% endblock %}
+				</div>
+			</div>
+		</div>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+		<script src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+		<script src="{{ STATIC_URL }}js/jquery.ui.datepicker-ja.js"></script>
+		<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+		<script>
+		<!--
+		$(function(){
+			$("#datepicker1").datepicker({ dateFormat: "yy-mm-dd" });
+			$("#datepicker2").datepicker({ dateFormat: "yy-mm-dd" });
+			$("#datepicker3").datepicker({ dateFormat: "yy-mm-dd" });
+			$("#datepicker4").datepicker({ dateFormat: "yy-mm-dd" });
+			$("#datepicker5").datepicker({ dateFormat: "yy-mm-dd" });
+		});
+		// -->
+		</script>
+	</body>
+</html>

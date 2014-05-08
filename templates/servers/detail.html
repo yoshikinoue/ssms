@@ -1,0 +1,236 @@
+{% extends 'servers/base.html' %}
+	{% block content %}
+						<div class="row-fluid">
+
+							<div class="span6">
+								<table class="table table-bordered table-condensed">
+<!-- 									<thead>
+										<tr>
+											<th>項目名</th>
+											<th>内容</th>
+										</tr>
+									</thead> -->
+									<tbody>
+										<tr>
+											<td>ID(変更禁止):</td>
+											<td>{{ server.id_number }}</td>
+										</tr>
+										<tr>
+											<td>ドメイン名:</td>
+											<td>{{ server.domain_name }}</td>
+										</tr>
+										<tr>
+											<td>RACEﾄﾞﾒｲﾝ名:</td>
+											<td>{{ server.race_domain_name }}</td>
+										</tr>
+										<tr>
+											<td>種目(変更禁止):</td>
+											<td>{{ server.items }}</td>
+										</tr>
+										<tr>
+											<td>ドメイン登録日:</td>
+											<td>{{ server.domain_register_day }}</td>
+										</tr>
+										<tr>
+											<td>ドメイン変更日:</td>
+											<td>{{ server.domain_change_day }}</td>
+										</tr>
+										<tr>
+											<td>ドメイン削除日:</td>
+											<td>{{ server.domain_delete_day }}</td>
+										</tr>
+										<tr>
+											<td>ドメイン有効期限:</td>
+											<td>{{ server.domain_validity_day }}</td>
+										</tr>
+										<tr>
+											<td>終了日:</td>
+											<td>{{ server.end_day }}</td>
+										</tr>
+										<tr>
+											<td>利用ホスト名:</td>
+											<td>{{ server.use_host_name }}</td>
+										</tr>
+										<tr>
+											<td>ドメイン用IP:</td>
+											<td>{{ server.domain_ip }}</td>
+										</tr>
+										<tr>
+											<td>DNS1(ホスト名):</td>
+											<td>{{ server.dns1_hostname }}</td>
+										</tr>
+										<tr>
+											<td>DNS1(IP):</td>
+											<td>{{ server.dns1_ip }}</td>
+										</tr>
+										<tr>
+											<td>DNS2(ホスト名):</td>
+											<td>{{ server.dns2_hostname }}</td>
+										</tr>
+										<tr>
+											<td>DNS2(IP):</td>
+											<td>{{ server.dns2_ip }}</td>
+										</tr>
+										<tr>
+											<td>状態:</td>
+											<td>{{ server.conditions }}</td>
+										</tr>
+										<tr>
+											<td>FTPアカウント:</td>
+											<td>{{ server.ftp_account }}</td>
+										</tr>
+										<tr>
+											<td>FTPパスワード:</td>
+											<td>{{ server.ftp_password }}</td>
+										</tr>
+										<tr>
+											<td>レジストラ:</td>
+											<td>{{ server.registrar }}</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+
+							<div class="span6">
+								<table class="table table-bordered table-condensed">
+									<tbody>
+										<tr>
+											<td>会社名:</td>
+											<td>{{ server.company_name }}</td>
+										</tr>
+										<tr>
+											<td>部署名:</td>
+											<td>{{ server.post_name }}</td>
+										</tr>
+										<tr>
+											<td>担当者名:</td>
+											<td>{{ server.charge_name }}</td>
+										</tr>
+										<tr>
+											<td>住所:</td>
+											<td>{{ server.company_address }}</td>
+										</tr>
+										<tr>
+											<td>TEL:</td>
+											<td>{{ server.telephone_number }}</td>
+										</tr>
+										<tr>
+											<td>FAX:</td>
+											<td>{{ server.facsimile_number }}</td>
+										</tr>
+										<tr>
+											<td>通知用Mail:</td>
+											<td>{{ server.info_mail_address }}</td>
+										</tr>
+										<tr>
+											<td>弊社担当:</td>
+											<td>{{ server.sainet_charge }}</td>
+										</tr>
+										<tr>
+											<td>管理用URL:</td>
+											<td>{{ server.manage_url }}</td>
+										</tr>
+										<tr>
+											<td>管理画面ユーザ名:</td>
+											<td>{{ server.manage_user_name }}</td>
+										</tr>
+										<tr>
+											<td>管理画面パスワード:</td>
+											<td>{{ server.manage_password }}</td>
+										</tr>
+										<tr>
+											<td>MailAdminPass:</td>
+											<td>{{ server.mail_admin_pass }}</td>
+										</tr>
+										<tr>
+											<td>請求会社名:</td>
+											<td>{{ server.demand_company_name }}</td>
+										</tr>
+										<tr>
+											<td>請求氏名:</td>
+											<td>{{ server.demand_charge_name }}</td>
+										</tr>
+										<tr>
+											<td>請求住所:</td>
+											<td>{{ server.demand_address }}</td>
+										</tr>
+									</tbody>
+								</table>
+								<fieldset>
+									<legend>SaiNetクラウドvSphere Clientログイン情報</legend>
+									<table class="table table-bordered table-condensed">
+										<tbody>
+											<tr>
+												<td>管理用IPアドレス:</td>
+												<td>{{ server.manage_ip_address }}</td>
+											</tr>
+											<tr>
+												<td>ログインアカウント:</td>
+												<td>{{ server.login_account }}</td>
+											</tr>
+											<tr>
+												<td>ログインパスワード:</td>
+												<td>{{ server.login_password }}</td>
+											</tr>
+											<tr>
+												<td>VMware Esxi:</td>
+												<td>{{ server.vmware_esxi }}</td>
+											</tr>
+											<tr>
+												<td>マシン名:</td>
+												<td>{{ server.machine_name }}</td>
+											</tr>
+										</tbody>
+									</table>
+								</fieldset>
+								<table class="table table-bordered table-condensed">
+									<tbody>
+										<tr>
+											<td>管理ページへの接続情報:</td>
+											<td>{{ server.manage_conn_info }}</td>
+										</tr>
+										<tr>
+											<td>データストアの場所:</td>
+											<td>{{ server.data_store_place }}</td>
+										</tr>
+										<tr>
+											<td>SSLチャレンジレスポンスコード:</td>
+											<td>{{ server.ssl_response_code }}</td>
+										</tr>
+										<tr>
+											<td>データベース仕様:</td>
+											<td>{{ server.database_spec }}</td>
+										</tr>
+										<tr>
+											<td>データベース接続ID:</td>
+											<td>{{ server.database_conn_id }}</td>
+										</tr>
+										<tr>
+											<td>データベース接続PASS:</td>
+											<td>{{ server.database_conn_pass }}</td>
+										</tr>
+										<tr>
+											<td>手順書の場所:</td>
+											<td>{{ server.procedure_book_place }}</td>
+										</tr>
+										<tr>
+											<td>ESXiの物理ホスト名:</td>
+											<td>{{ server.esxi_physics_host_name }}</td>
+										</tr>
+										<tr>
+											<td>ESXiの物理ホストIP:</td>
+											<td>{{ server.esxi_physics_host_ip }}</td>
+										</tr>
+										<tr>
+											<td>ラックの場所:</td>
+											<td>{{ server.server_rack_place }}</td>
+										</tr>
+									</tbody>
+								</table>
+							<a class="btn btn-large btn-primary" href="/ssms/servers/Update/{{ server.id_number }}">編集</a>
+							<a class="btn btn-large btn-primary" href="/ssms/servers/">キャンセル</a>
+
+							</div>
+						</div>
+{% endblock %}

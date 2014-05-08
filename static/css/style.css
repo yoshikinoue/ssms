@@ -1,0 +1,33 @@
+.form-horizontal .control-label {
+	width: 150px;
+}
+
+.form-horizontal .controls {
+		margin-left: 160px;
+}
+
+.row-fluid .span10 {
+		margin-top: 30px;
+}
+
+.form-horizontal .control-group {
+		margin-bottom: 10px;
+}
+
+/*legend {
+	margin-bottom: 10px;
+	font-size: 12px;
+	line-height: 30px;
+}*/
+
+body {
+	font-family:'メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+/*.navbar .brand {
+padding: 1px 1px 1px;
+}
+
+li {
+line-height: 30px;
+}*/

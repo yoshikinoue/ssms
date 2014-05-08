@@ -1,0 +1,27 @@
+{% extends 'servers/base.html' %}
+	{% block content %}
+					<table class="table table-bordered table-condensed">
+						<thead>
+							<tr>
+								<th>id</th>
+								<th>ドメイン名</th>
+								<th>会社名</th>
+								<th>弊社担当者名</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% if latest_server_list %}
+								{% for server in latest_server_list %}
+							<tr>
+									<td><a href="/ssms/servers/{{ server.id_number }}/">{{ server.id_number }}</a>
+									<td><a href="/ssms/servers/{{ server.id_number }}/">{{ server.domain_name }}</a>
+									<td><a href="/ssms/servers/{{ server.id_number }}/">{{ server.company_name }}</a>
+									<td><a href="/ssms/servers/{{ server.id_number }}/">{{ server.sainet_charge }}</a>
+							</tr>
+								{% endfor %}
+							{% else %}
+							<p>データがありません。</p>
+							{% endif %}
+						</tbody>
+					</table>
+{% endblock %}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サーバ管理-ssms-</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" media="screen">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" media="screen">
+
+  </head>
+  <body style="padding-top:30px">
+    <div class="container-fluid">
+      <!-- top navbar -->
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+           <a href="" class="brand">サバ缶台帳</a>
+            <ul class="nav">
+              <li class="active"><a href="">Home</a></li>
+              <li><a href="">Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <!--Sidebar content-->
+        <div class="span2" style="padding-top:40px">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">一覧表示</li>
+              <li>
+                <a href="#">ID順</a>
+              </li>
+              <li>
+                <a href="#">会社順</a>
+              </li>
+              <li>
+                <a href="#">担当者順</a>
+              </li>
+              <li class="nav-header">編集</li>
+              <li>
+                <a href="#">新規追加</a>
+              </li>
+              <li>
+                <a href="#">link</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!--Body content-->
+        <div class="span10" style="background:lightgray;padding-top:20px">
+          <form class="form-horizontal" action="/servers/{{ server.id }}/vote/" method="post">
+            <div class="row-fluid">
+
+              <div class="span6">
+                <!-- id -->
+                <div class="control-group">
+                  <label class="control-label" for="id">ID(変更禁止):</label>
+                  <div class="controls">
+                    <input class="input-mini" type="text" name="id" placeholder="001" value="{{ server.id_number }}">
+                  </div>
+                </div>
+
+                <!-- domain_day -->
+                <div class="control-group">
+                  <label class="control-label" for="domain_name">ドメイン名:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="domain_name" placeholder="sainet.ne.jp" value="{{ server.domain_name }}">
+                  </div>
+
+                  <label class="control-label" for="race_domain_name">RACEﾄﾞﾒｲﾝ名:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="race_domain_name" placeholder="048-259-2870" value="{{ server.race_domain_name }}">
+                  </div>
+
+                  <label class="control-label" for="items">種目(変更禁止):</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="items" placeholder="カスタマイズ" value="{{ server.items }}">
+                  </div>
+                  <label class="control-label" for="domain_register_day">ドメイン登録日:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="domain_register_day" placeholder="1998/07/06" value="{{ server.domain_register_day }}">
+                  </div>
+
+                  <label class="control-label" for="domain_change_day">ドメイン変更日:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="domain_change_day" placeholder="1998/07/06" value="{{ server.domain_change_day }}">
+                  </div>
+
+                  <label class="control-label" for="domain_delete_day">ドメイン削除日:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="domain_delete_day" placeholder="1998/07/06" value="{{ server.domain_delete_day }}">
+                  </div>
+
+                  <label class="control-label" for="domain_validity_day">ドメイン有効期限:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="domain_validity_day" placeholder="1998/07/06" value="{{ server.domain_validity_day }}">
+                  </div>
+
+                  <label class="control-label" for="end_day">終了日:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="end_day" placeholder="1998/07/06" value="{{ server.end_day }}">
+                  </div>
+                </div>
+
+                <!-- host_DNS -->
+                <div class="control-group">
+                  <label class="control-label" for="use_host_name">利用ホスト名:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="use_host_name" placeholder="sainet.ne.jp" value="{{ server.use_host_name }}">
+                  </div>
+
+                  <label class="control-label" for="domain_ip">ドメイン用IP:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="domain_ip" placeholder="XXX.XXX.XXX.XXX" value="{{ server.domain_ip }}">
+                  </div>
+
+                  <label class="control-label" for="dns1_hostname">DNS1(ホスト名):</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="dns1_hostname" placeholder="sainet.ne.jp" value="{{ server.dns1_hostname }}">
+                  </div>
+
+                  <label class="control-label" for="dns1_ip">DNS1(IP):</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="dns1_ip" placeholder="XXX.XXX.XXX.XXX" value="{{ server.dns1_ip }}">
+                  </div>
+
+                  <label class="control-label" for="dns2_hostname">DNS2(ホスト名):</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="dns2_hostname" placeholder="sainet.ne.jp" value="{{ server.dns2_hostname }}">
+                  </div>
+
+                  <label class="control-label" for="dns2_ip">DNS2(IP):</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="dns2_ip" placeholder="XXX.XXX.XXX.XXX" value="{{ server.dns2_ip }}">
+                  </div>
+
+                  <label class="control-label" for="conditions">状態:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="conditions" placeholder="運用中" value="{{ server.conditions }}">
+                  </div>
+
+                  <label class="control-label" for="ftp_account">FTPアカウント:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="ftp_account" placeholder="kensyu" value="{{ server.ftp_account }}">
+                  </div>
+
+                  <label class="control-label" for="ftp_password">FTPパスワード:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="ftp_password" placeholder="sainet" value="{{ server.ftp_password }}">
+                  </div>
+
+                  <label class="control-label" for="registrar">レジストラ:</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="registrar" placeholder="お名前.com" value="{{ server.registrar }}">
+                  </div>
+                </div>
+              </div>
+
+              <div class="span6">
+    
+
+                <label class="control-label" for="company_name">会社名:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="company_name" placeholder="株式会社井上商事" value="{{ server.company_name }}">
+                </div>
+
+                <label class="control-label" for="post_name">部署名:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="post_name" placeholder="情報システム部" value="{{ server.post_name }}">
+                </div>
+
+                <label class="control-label" for="charge_name">担当者名:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="charge_name" placeholder="井上一郎" value="{{ server.charge_name }}">
+                </div>
+
+                <label class="control-label" for="company_address">住所:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="company_address" placeholder="埼玉県川口市並木2丁目25番3号" value="{{ server.company_address }}">
+                </div>
+
+                <label class="control-label" for="race_domain_name">TEL:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="telephone_number" placeholder="048-259-2366" value="{{ server.telephone_number }}">
+                </div>
+
+                <label class="control-label" for="facsimile_number">FAX:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="facsimile_number" placeholder="048-259-2870" value="{{ server.facsimile_number }}">
+                </div>
+
+                <label class="control-label" for="info_mail_address">通知用Mail:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="info_mail_address" placeholder="info@sainet.or.jp" value="{{ server.info_mail_address }}">
+                </div>
+
+                <label class="control-label" for="sainet_charge">弊社担当:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="sainet_charge" placeholder="前垣内" value="{{ server.sainet_charge }}">
+                </div>
+
+                <label class="control-label" for="manage_url">管理用URL:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="manage_url" placeholder="sainet.or.jp/admin/" value="{{ server.manage_url }}">
+                </div>
+
+                <label class="control-label" for="manage_user_name">管理ユーザ名:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="manage_user_name" placeholder="root" value="{{ server.manage_user_name }}">
+                </div>
+
+                <label class="control-label" for="manage_password">管理パスワード:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="manage_password" placeholder="admin" value="{{ server.manage_password }}">
+                </div>
+
+                <label class="control-label" for="mail_admin_pass">MailAdminPass:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="mail_admin_pass" placeholder="mailadmin" value="{{ server.mail_admin_pass }}">
+                </div>
+
+                <label class="control-label" for="demand_company_name">請求会社名:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="demand_company_name" placeholder="株式会社井上ホールディングス" value="{{ server.demand_company_name }}">
+                </div>
+
+                <label class="control-label" for="demand_charge_name">請求氏名:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="demand_charge_name" placeholder="井上次郎" value="{{ server.demand_charge_name }}">
+                </div>
+
+                <label class="control-label" for="demand_address">請求住所:</label>
+                <div class="controls">
+                  <input class="input-large" type="text" name="demand_address" placeholder="埼玉県川口市並木2丁目25番3号" value="{{ server.demand_address }}">
+                </div>
+
+                <fieldset>
+                  <legend>vSphere Clientログイン情報</legend>
+
+                  <label class="control-label" for="manage_ip_address">管理用IPアドレス</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="manage_ip_address" placeholder="XXX.XXX.XXX.XXX" value="{{ server.manage_ip_address }}">
+                  </div>
+
+                  <label class="control-label" for="login_account">ログインアカウント</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="login_account" placeholder="loginadmin" value="{{ server.login_account }}">
+                  </div>
+
+                  <label class="control-label" for="login_password">ログインパスワード</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="login_password" placeholder="sainet" value="{{ server.login_password }}">
+                  </div>
+
+                  <label class="control-label" for="login_password">VMware Esxi</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="vmware_esxi" placeholder="VMware" value="{{ server.vmware_esxi }}">
+                  </div>
+
+                  <label class="control-label" for="login_password">マシン名</label>
+                  <div class="controls">
+                    <input class="input-large" type="text" name="machine_name" placeholder="dataserver" value="{{ server.machine_name }}">
+                  </div>
+
+
+
+                </fieldset>
+              </div>
+
+              <div class="control-group">
+                <div class="controls">
+                  <input type="submit" value="保存" class="btn">
+                  <input type="submit" value="削除" class="btn">
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+  </body>
+</html>

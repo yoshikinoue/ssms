@@ -1,0 +1,308 @@
+{% extends 'servers/base.html' %}
+	{% block content %}
+				{{form.errors}}
+					<form class="form-horizontal" action="." method="post">{% csrf_token %}
+						<div class="row-fluid">
+							<div class="span6">
+								<!-- id -->
+								<div class="control-group">
+									<label class="control-label" for="id">ID(変更禁止):</label>
+									<div class="controls">
+										<!-- <input class="input-mini" type="text" name="id_number" placeholder="001" value="{{ server.id_number }}"> -->
+									{{ form.id_number }}
+									</div>
+								</div>
+
+								<!-- domain_day -->
+								<div class="control-group">
+									<label class="control-label" for="domain_name">ドメイン名:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="domain_name" placeholder="sainet.ne.jp" value="{{ server.domain_name }}"> -->
+									{{ form.domain_name }}
+									</div>
+
+									<label class="control-label" for="race_domain_name">RACEﾄﾞﾒｲﾝ名:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="race_domain_name" placeholder="048-259-2870" value="{{ server.race_domain_name }}"> -->
+									{{ form.race_domain_name }}
+									</div>
+
+									<label class="control-label" for="items">種目(変更禁止):</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="items" placeholder="カスタマイズ" value="{{ server.items }}"> -->
+									{{ form.items }}
+									</div>
+
+									<label class="control-label" for="domain_register_day">ドメイン登録日:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="domain_register_day" id="datepicker1" placeholder="1998-07-06" value="{{ server.domain_register_day|date:"Y-m-d" }}"> -->
+									{{ form.domain_register_day }}
+									</div>
+
+									<label class="control-label" for="domain_change_day">ドメイン変更日:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="domain_change_day" id="datepicker2" placeholder="1998-07-06" value="{{ server.domain_change_day|date:"Y-m-d" }}"> -->
+									{{ form.domain_change_day }}
+									</div>
+
+									<label class="control-label" for="domain_delete_day">ドメイン削除日:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="domain_delete_day" id="datepicker3" placeholder="1998-07-06" value="{{ server.domain_delete_day|date:"Y-m-d" }}"> -->
+										{{ form.domain_delete_day }}
+									</div>
+
+									<label class="control-label" for="domain_validity_day">ドメイン有効期限:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="domain_validity_day" id="datepicker4" placeholder="1998-07-06" value="{{ server.domain_validity_day|date:"Y-m-d" }}"> -->
+										{{ form.domain_validity_day }}
+									</div>
+
+									<label class="control-label" for="end_day">終了日:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="end_day" id="datepicker5" placeholder="1998-07-06" value="{{ server.end_day|date:"Y-m-d" }}"> -->
+										{{ form.end_day }}
+									</div>
+								</div>
+
+								<!-- host_DNS -->
+								<div class="control-group">
+									<label class="control-label" for="use_host_name">利用ホスト名:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="use_host_name" placeholder="sainet.ne.jp" value="{{ server.use_host_name }}"> -->
+										{{ form.use_host_name }}
+									</div>
+
+									<label class="control-label" for="domain_ip">ドメイン用IP:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="domain_ip" placeholder="XXX.XXX.XXX.XXX" value="{{ server.domain_ip }}"> -->
+										{{ form.domain_ip }}
+									</div>
+
+									<label class="control-label" for="dns1_hostname">DNS1(ホスト名):</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="dns1_hostname" placeholder="sainet.ne.jp" value="{{ server.dns1_hostname }}"> -->
+										{{ form.dns1_hostname }}
+									</div>
+
+									<label class="control-label" for="dns1_ip">DNS1(IP):</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="dns1_ip" placeholder="XXX.XXX.XXX.XXX" value="{{ server.dns1_ip }}"> -->
+										{{ form.dns1_ip }}
+									</div>
+
+									<label class="control-label" for="dns2_hostname">DNS2(ホスト名):</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="dns2_hostname" placeholder="sainet.ne.jp" value="{{ server.dns2_hostname }}"> -->
+										{{ form.dns2_hostname }}
+									</div>
+
+									<label class="control-label" for="dns2_ip">DNS2(IP):</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="dns2_ip" placeholder="XXX.XXX.XXX.XXX" value="{{ server.dns2_ip }}"> -->
+										{{ form.dns2_ip }}
+									</div>
+
+									<label class="control-label" for="conditions">状態:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="conditions" placeholder="運用中" value="{{ server.conditions }}"> -->
+										{{ form.conditions }}
+									</div>
+
+									<label class="control-label" for="ftp_account">FTPアカウント:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="ftp_account" placeholder="kensyu" value="{{ server.ftp_account }}"> -->
+										{{ form.ftp_account }}
+									</div>
+
+									<label class="control-label" for="ftp_password">FTPパスワード:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="ftp_password" placeholder="sainet" value="{{ server.ftp_password }}"> -->
+										{{ form.ftp_password }}
+									</div>
+
+									<label class="control-label" for="registrar">レジストラ:</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="registrar" placeholder="お名前.com" value="{{ server.registrar }}"> -->
+										{{ form.registrar }}
+									</div>
+								</div>
+							</div>
+
+							<div class="span6">
+		
+
+								<label class="control-label" for="company_name">会社名:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="company_name" placeholder="株式会社井上商事" value="{{ server.company_name }}"> -->
+										{{ form.company_name }}
+								</div>
+
+								<label class="control-label" for="post_name">部署名:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="post_name" placeholder="情報システム部" value="{{ server.post_name }}"> -->
+										{{ form.post_name }}
+								</div>
+
+								<label class="control-label" for="charge_name">担当者名:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="charge_name" placeholder="井上一郎" value="{{ server.charge_name }}"> -->
+										{{ form.charge_name }}
+								</div>
+
+								<label class="control-label" for="company_address">住所:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="company_address" placeholder="埼玉県川口市並木2丁目25番3号" value="{{ server.company_address }}"> -->
+										{{ form.company_address }}
+								</div>
+
+								<label class="control-label" for="telephone_number">TEL:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="telephone_number" placeholder="048-259-2366" value="{{ server.telephone_number }}"> -->
+										{{ form.telephone_number }}
+								</div>
+
+								<label class="control-label" for="facsimile_number">FAX:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="facsimile_number" placeholder="048-259-2870" value="{{ server.facsimile_number }}"> -->
+										{{ form.facsimile_number }}
+								</div>
+
+								<label class="control-label" for="info_mail_address">通知用Mail:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="info_mail_address" placeholder="info@sainet.or.jp" value="{{ server.info_mail_address }}"> -->
+										{{ form.info_mail_address }}
+								</div>
+
+								<label class="control-label" for="sainet_charge">弊社担当:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="sainet_charge" placeholder="前垣内" value="{{ server.sainet_charge }}"> -->
+										{{ form.sainet_charge }}
+								</div>
+
+								<label class="control-label" for="manage_url">管理用URL:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="manage_url" placeholder="sainet.or.jp/admin/" value="{{ server.manage_url }}"> -->
+										{{ form.manage_url }}
+								</div>
+
+								<label class="control-label" for="manage_user_name">管理ユーザ名:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="manage_user_name" placeholder="root" value="{{ server.manage_user_name }}"> -->
+										{{ form.manage_user_name }}
+								</div>
+
+								<label class="control-label" for="manage_password">管理パスワード:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="manage_password" placeholder="admin" value="{{ server.manage_password }}"> -->
+										{{ form.manage_password }}
+								</div>
+
+								<label class="control-label" for="mail_admin_pass">MailAdminPass:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="mail_admin_pass" placeholder="mailadmin" value="{{ server.mail_admin_pass }}"> -->
+										{{ form.mail_admin_pass }}
+								</div>
+
+								<label class="control-label" for="demand_company_name">請求会社名:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="demand_company_name" placeholder="株式会社井上ホールディングス" value="{{ server.demand_company_name }}"> -->
+										{{ form.demand_company_name }}
+								</div>
+
+								<label class="control-label" for="demand_charge_name">請求氏名:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="demand_charge_name" placeholder="井上次郎" value="{{ server.demand_charge_name }}"> -->
+										{{ form.demand_charge_name }}
+								</div>
+
+								<label class="control-label" for="demand_address">請求住所:</label>
+								<div class="controls">
+									<!-- <input class="input-large" type="text" name="demand_address" placeholder="埼玉県川口市並木2丁目25番3号" value="{{ server.demand_address }}"> -->
+										{{ form.demand_address }}
+								</div>
+
+								<fieldset>
+									<legend>SaiNetクラウドvSphere Clientログイン情報</legend>
+
+									<label class="control-label" for="manage_ip_address">管理用IPアドレス</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="manage_ip_address" placeholder="XXX.XXX.XXX.XXX" value="{{ server.manage_ip_address }}"> -->
+										{{ form.manage_ip_address }}
+									</div>
+
+									<label class="control-label" for="login_account">ログインアカウント</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="login_account" placeholder="loginadmin" value="{{ server.login_account }}"> -->
+										{{ form.login_account }}
+									</div>
+
+									<label class="control-label" for="login_password">ログインパスワード</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="login_password" placeholder="sainet" value="{{ server.login_password }}"> -->
+										{{ form.login_password }}
+									</div>
+
+									<label class="control-label" for="vmware_esxi">VMware Esxi</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="vmware_esxi" placeholder="VMware" value="{{ server.vmware_esxi }}"> -->
+										{{ form.vmware_esxi }}
+									</div>
+
+									<label class="control-label" for="machine_name">マシン名</label>
+									<div class="controls">
+										<!-- <input class="input-large" type="text" name="machine_name" placeholder="dataserver" value="{{ server.machine_name }}"> -->
+										{{ form.machine_name }}
+									</div>
+								</fieldset>
+
+								<label class="control-label" for="id_manage_conn_info">管理ﾍﾟｰｼﾞの接続情報:</label>
+								<div class="controls">
+										{{ form.manage_conn_info }}
+								</div>
+								<label class="control-label" for="id_data_store_place">データストアの場所:</label>
+								<div class="controls">
+										{{ form.data_store_place }}
+								</div>
+								<label class="control-label" for="ssl_response_code">SSLﾁｬﾚﾝｼﾞﾚｽﾎﾟﾝｽｺｰﾄﾞ:</label>
+								<div class="controls">
+										{{ form.ssl_response_code }}
+								</div>
+								<label class="control-label" for="database_spec">データベース仕様:</label>
+								<div class="controls">
+										{{ form.database_spec }}
+								</div>
+								<label class="control-label" for="database_conn_id">データベース接続ID:</label>
+								<div class="controls">
+										{{ form.database_conn_id }}
+								</div>
+								<label class="control-label" for="database_conn_pass">データベース接続PASS:</label>
+								<div class="controls">
+										{{ form.database_conn_pass }}
+								</div>
+								<label class="control-label" for="procedure_book_place">手順書の場所:</label>
+								<div class="controls">
+										{{ form.procedure_book_place }}
+								</div>
+								<label class="control-label" for="esxi_physics_host_name">ESXiの物理ホスト名:</label>
+								<div class="controls">
+										{{ form.esxi_physics_host_name }}
+								</div>
+								<label class="control-label" for="esxi_physics_host_ip">ESXiの物理ホストIP:</label>
+								<div class="controls">
+										{{ form.esxi_physics_host_ip }}
+								</div>
+								<label class="control-label" for="server_rack_place">ラックの場所:</label>
+								<div class="controls">
+										{{ form.server_rack_place }}
+								</div>
+							</div>
+
+							<div class="control-group">
+								<div class="controls">
+									<input type="submit" value="ＯＫ" class="btn">
+								</div>
+							</div>
+
+						</div>
+					</form>
+{% endblock %}

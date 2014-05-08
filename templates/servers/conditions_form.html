@@ -1,0 +1,16 @@
+{% extends 'servers/base.html' %}
+	{% block content %}
+				{{form.errors}}
+					<form class="form-horizontal form-search" action='.' method='POST'>{% csrf_token %}
+						<div class="row-fluid">
+							<div class="control-group">
+								<div class="controls">
+									<!-- <table> -->
+										{{ form.as_table }}
+									<!-- </table> -->
+									<button type="submit" class="btn">登録</button>
+								</div>
+							</div>
+						</div>
+					</form>
+{% endblock %}

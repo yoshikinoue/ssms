@@ -1,0 +1,40 @@
+{% extends 'servers/base.html' %}
+	{% block content %}
+				{{form.errors}}
+					<form class="form-horizontal form-search" action='/ssms/servers/search/' method='POST'>{% csrf_token %}
+						<div class="row-fluid">
+							<div class="control-group">
+								<div class="controls">
+									<!-- <table> -->
+										{{ form.as_table }}
+									<!-- </table> -->
+									<button type="submit" class="btn"> 検 索 </button>
+								</div>
+								<table class="table table-bordered table-condensed">
+									<thead>
+										<tr>
+											<th>id</th>
+											<th>ドメイン名</th>
+											<th>会社名</th>
+											<th>弊社担当者名</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% if servers_list %}
+											{% for server in servers_list %}
+											<tr>
+												<td><a href="/ssms/servers/{{ server.id_number }}/">{{ server.id_number }}</a></td>
+												<td><a href="/ssms/servers/{{ server.id_number }}/">{{ server.domain_name }}</a></td>
+												<td><a href="/ssms/servers/{{ server.id_number }}/">{{ server.company_name }}</a></td>
+												<td><a href="/ssms/servers/{{ server.id_number }}/">{{ server.sainet_charge }}</a></td>
+											</tr>
+											{% endfor %}
+										{% else %}
+											<p>データがありません。</p>
+										{% endif %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</form>
+{% endblock %}
